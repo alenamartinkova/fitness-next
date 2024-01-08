@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { debounce } from 'lodash';
 import 'react-quill/dist/quill.snow.css';
-import '../src/app/globals.css';
+import '../styles/globals.css';
 
 const ReactQuill = dynamic(() => import('react-quill'), {
     ssr: false,
