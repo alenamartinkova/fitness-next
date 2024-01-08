@@ -1,6 +1,6 @@
 import { SpecialBlock } from './special/SpecialBlock'
 
-export const Special = () => {
+export const Special = ({ texts }) => {
     return (
         <div className={'block section'} id={'special-section'}>
             <div

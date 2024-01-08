@@ -1,4 +1,4 @@
-export const Why = () => {
+export const Why = ({ texts }) => {
     return (
         <div className={'block'}>
             <h3
@@ -11,14 +11,14 @@ export const Why = () => {
             <div className={'grid md:grid-cols-2 gap-6'}>
                 <div className={'flex flex-col gap-4'}>
                     <p>
-                        Co se ti vybaví, když se řekne{' '}
+                        Co se ti vybaví, když se řekne
                         <strong>“funkční trénink”</strong>? Já ti ráda trošku
                         napovím. Slovo “funkce” totiž nabývá mnoho významů. Když
                         zkombinujeme funkci kondiční, která je v zájmu většiny
                         cvičenců, s funkcí stabilizační, posturální, estetickou
-                        a koordinační, tak suma sumárum dojdeme k{' '}
+                        a koordinační, tak suma sumárum dojdeme k
                         <strong>funkčnímu tréninku</strong>. Ten propojuje
-                        všechny výše zmíněné funkce v jeden celek a vede tak k{' '}
+                        všechny výše zmíněné funkce v jeden celek a vede tak k
                         <strong>trvale udržitelnému zdraví</strong>.
                     </p>
                     <p>

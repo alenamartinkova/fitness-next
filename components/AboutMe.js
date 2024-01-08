@@ -1,4 +1,4 @@
-export const AboutMe = () => {
+export const AboutMe = ({ texts }) => {
     return (
         <div className={'block section'} id={'about-me-section'}>
             <div

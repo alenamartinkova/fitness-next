@@ -1,4 +1,4 @@
-export const Header = () => {
+export const Header = ({ texts }) => {
     return (
         <div className={'block mt-[150px]'}>
             <div

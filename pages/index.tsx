@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type {GetServerSideProps, NextPage} from 'next'
 import { InferGetStaticPropsType } from 'next'
 import { getStaticProps } from "next/dist/build/templates/pages";
 import Nav from "../components/Nav";
@@ -10,8 +10,25 @@ import AboutMe from "../components/AboutMe";
 import Education from "../components/Education";
 import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
 
-const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ locale }) => {
+const Home: NextPage = () => {
+  const [texts, setTexts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/select');
+        const data = await response.json();
+        setTexts(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div
       className={
@@ -20,15 +37,15 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ locale
     >
       <div id={'top'}/>
       <div className={'flex flex-col md:gap-[120px] gap-8'}>
-        <Nav/>
-        <Header/>
-        <Special/>
-        <Why/>
-        <Divider/>
-        <AboutMe/>
-        <Education/>
-        <Pricing/>
-        <Footer/>
+        <Nav texts={texts} />
+        <Header texts={texts} />
+        <Special texts={texts} />
+        <Why texts={texts} />
+        <Divider texts={texts} />
+        <AboutMe texts={texts} />
+        <Education texts={texts} />
+        <Pricing texts={texts} />
+        <Footer texts={texts} />
       </div>
     </div>
   )

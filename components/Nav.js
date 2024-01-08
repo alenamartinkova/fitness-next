@@ -1,7 +1,7 @@
 import { Item } from './nav/Item'
 import { useEffect, useState } from 'react'
 
-export const Nav = () => {
+export const Nav = ({ texts }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const [activeNavItem, setActiveNavItem] = useState(null)

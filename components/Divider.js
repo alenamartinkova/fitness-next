@@ -1,4 +1,4 @@
-export const Divider = () => {
+export const Divider = ({ texts }) => {
     return (
         <div
             className={

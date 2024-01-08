@@ -1,6 +1,6 @@
 import { PricingBlock } from './pricing/PricingBlock'
 
-export const Pricing = () => {
+export const Pricing = ({ texts }) => {
     return (
         <div className={'block section'} id={'pricing-section'}>
             <div
