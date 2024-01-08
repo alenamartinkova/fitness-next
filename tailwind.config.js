@@ -9,12 +9,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      black: '#343434',
-      white: '#fff',
-      grey: '#EDEDED',
-      pink: '#FF8080',
-    },
     extend: {
       backgroundImage: {
         'footer-klarka': "url('../public/footer-klarka.jpeg')",
@@ -24,6 +18,12 @@ module.exports = {
       },
       width: {
         unset: 'unset',
+      },
+      colors: {
+        black: '#343434',
+        white: '#fff',
+        grey: '#EDEDED',
+        pink: '#FF8080',
       },
     },
   },
