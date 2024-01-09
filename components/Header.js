@@ -1,3 +1,5 @@
+import {createMarkup, filterArrayByKey} from "../lib/helper";
+
 export const Header = ({ texts }) => {
     return (
         <div className={'block mt-[150px]'}>
@@ -13,16 +15,9 @@ export const Header = ({ texts }) => {
                 >
                     <h1
                         className={'italic font-extrabold text-5xl lg:text-7xl'}
-                    >
-                        Pohyb není povinnost, pohyb je radost!
-                    </h1>
-                    <p className={'lg:max-w-[575px] md:max-w-[400px]'}>
-                        Ahoj! Jsem Klárka, osobní trenérka a milovnice pohybu.
-                        Ráda Ti pomůžu po estetické stránce, ať už s redukcí
-                        tuků nebo nabíráním svalové hmoty. Nicméně mnohem raději
-                        Ti pomůžu k tomu, cítit se lépe ve svém těle, a to
-                        hlavně po stránce zdravotní.
-                    </p>
+                        dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_1'))}
+                    />
+                    <p className={'lg:max-w-[575px] md:max-w-[400px]'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_2'))} />
                     <strong className={'mb-4'}>RESPECT club Ostrava</strong>
                 </div>
                 <div

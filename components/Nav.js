@@ -1,5 +1,6 @@
 import { Item } from './nav/Item'
 import { useEffect, useState } from 'react'
+import {createMarkup, filterArrayByKey} from "../lib/helper";
 
 export const Nav = ({ texts }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -132,9 +133,8 @@ export const Nav = ({ texts }) => {
                             'font-bold italic uppercase py-[14px] px-[60px] bg-black text-grey cursor-pointer rounded-xl min-w-fit h-fit'
                         }
                         onClick={() => setIsOpen(false)}
-                    >
-                        Kontaktuj mě
-                    </a>
+                        dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'contact_me'))}
+                   />
                 </div>
             </div>
         </div>

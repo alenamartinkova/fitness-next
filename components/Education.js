@@ -1,3 +1,5 @@
+import {createMarkup, filterArrayByKey} from "../lib/helper";
+
 export const Education = ({ texts }) => {
     return (
         <div className={'block section'} id={'education-section'}>
@@ -25,51 +27,19 @@ export const Education = ({ texts }) => {
                         className={
                             'font-extrabold uppercase text-pink text-3xl italic'
                         }
-                    >
-                        moje vzdělání
-                    </h2>
+                        dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_31'))}
+                    />
                     <ul className={'list-disc ml-6'}>
-                        <li>
-                            <strong>Trenér ﬁtness</strong> - Yoda Institut /
-                            2020
-                        </li>
-                        <li>
-                            <strong>Sestavování Fitness tréninků</strong> -
-                            Fitness Institut / 2020
-                        </li>
-                        <li>
-                            <strong>Úvod do mobility</strong> - Fitness Institut
-                            / 2020
-                        </li>
-                        <li>
-                            <strong>Sestavování jídelníčku</strong> - Fitness
-                            Institut / 2020
-                        </li>
-                        <li>
-                            <strong>
-                                Mezinárodní konference moderní výživy
-                            </strong>{' '}
-                            - Institut moderní výživy / 2022
-                        </li>
-                        <li>
-                            <strong>Zdravotně - funkční trenér</strong> - Yoda
-                            Institut / 2023
-                        </li>
-                        <li>
-                            <strong>Aktivace CORE (HSSP)</strong> - Yoda
-                            Institut / 2023
-                        </li>
-                        <li>
-                            <strong>Mobilita</strong> - Fitness Institut / 2023
-                        </li>
-                        <li>
-                            <strong>Funkční trénink</strong> - Fitness Institut
-                            / 2023
-                        </li>
-                        <li>
-                            <strong>Letecká doprava (Ing.)</strong> - VŠB-TU /
-                            2023
-                        </li>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_32'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_33'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_34'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_35'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_36'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_37'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_38'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_39'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_40'))}/>
+                        <li dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_41'))}/>
                     </ul>
                 </div>
             </div>

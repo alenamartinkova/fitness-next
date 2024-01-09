@@ -1,3 +1,5 @@
+import { createMarkup } from "../../lib/helper";
+
 export const SpecialBlock = ({ svg, text }) => {
     return (
         <div
@@ -6,7 +8,7 @@ export const SpecialBlock = ({ svg, text }) => {
             }
         >
             <img className={'max-w-[111px]'} src={svg} alt="description" />
-            <p className={'uppercase font-bold text-lg italic'}>{text}</p>
+            <p className={'uppercase font-bold text-lg italic'} dangerouslySetInnerHTML={createMarkup(text)} />
         </div>
     )
 }

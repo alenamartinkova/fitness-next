@@ -1,3 +1,5 @@
+import {createMarkup, filterArrayByKey} from "../lib/helper";
+
 export const AboutMe = ({ texts }) => {
     return (
         <div className={'block section'} id={'about-me-section'}>
@@ -13,38 +15,12 @@ export const AboutMe = ({ texts }) => {
                         className={
                             'font-extrabold uppercase text-pink text-3xl italic'
                         }
-                    >
-                        pár slov o mě
-                    </h2>
-                    <strong>
-                        Motivace k tomu vypadat dobře je dle mého názoru
-                        pomíjivá, ale mít své tělo jako užitečný nástroj, který
-                        poslouží tobě samému nebo tvým blízkým, je k
-                        nezaplacení!
-                    </strong>
-                    <p>
-                        Ahoj! Jsem Klárka, vášnivý blázen do letadel, výborného
-                        jídla, ale především osobní trenérka a milovnice pohybu.
-                        Ráda Ti pomůžu po estetické stránce, ať už s redukcí
-                        tuků nebo nabíráním svalové hmoty. Nicméně mnohem raději
-                        Ti pomůžu k tomu, cítit se lépe ve svém těle, a to
-                        hlavně po stránce zdravotní.
-                    </p>
-                    <p>
-                        Motivace k tomu vypadat dobře je dle mého názoru
-                        pomíjivá, ale mít své tělo jako užitečný nástroj, který
-                        poslouží tobě samému nebo tvým blízkým, je k
-                        nezaplacení! Proto se zaměřuji především na funkční
-                        trénink, který zahrnuje prvky mobility, stability,
-                        koordinace, tréninku HSSP, funkční síly a rozvoje
-                        kondice.
-                    </p>
-                    <p>
-                        Konec konců, když své tělo naučíš správnému a
-                        bezbolestnému pohybu, je to výhra, a to pro každodenní
-                        život! Tak pojďme spolu posílit svaly způsobem, jakým
-                        jsou zatěžovány v běžném životě!
-                    </p>
+                        dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_26'))}
+                    />
+                    <strong dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_27'))} />
+                    <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_28'))} />
+                    <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_29'))} />
+                    <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_30'))} />
                 </div>
 
                 <div

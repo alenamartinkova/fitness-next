@@ -1,4 +1,5 @@
 import { PricingBlock } from './pricing/PricingBlock'
+import {createMarkup, filterArrayByKey} from "../lib/helper";
 
 export const Pricing = ({ texts }) => {
     return (
@@ -13,55 +14,43 @@ export const Pricing = ({ texts }) => {
                 className={
                     'font-extrabold uppercase text-pink text-3xl italic mb-6'
                 }
-            >
-                ceník a služby
-            </h2>
-            <p className={'text-center mb-4'}>
-                Individuální trénink nebo konzultace na konkrétní téma s
-                využitím fyzio přístupů - 999 Kč
-            </p>
+                dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_50'))}
+            />
+            <p className={'text-center mb-4'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_51'))} />
             <div className={'grid md:grid-cols-2 gap-6 mb-6'}>
                 <PricingBlock
-                    text={
-                        'Úvodní svalový rozbor, sestavení a průběžné přizpůsobování tréninků (plánu), individuální trénink s využitím fyzio přístupů'
-                    }
-                    title={'Dlouhodobé vedení'}
-                    price={'999 Kč'}
-                    accordion={'Minimálně 5 lekcí za měsíc'}
+                    text={filterArrayByKey(texts, 'text_52')}
+                    title={filterArrayByKey(texts, 'text_53')}
+                    price={filterArrayByKey(texts, 'text_54')}
+                    accordion={filterArrayByKey(texts, 'text_55')}
                 />
                 <PricingBlock
-                    text={
-                        'Úvodní svalový rozbor, sestavení a průběžné přizpůsobování tréninků (plánu), individuální trénink s využitím fyzio přístupů'
-                    }
-                    title={'Dlouhodobé vedení'}
-                    price={'999 Kč'}
-                    accordion={'Minimálně 10 lekcí za měsíc'}
+                    text={filterArrayByKey(texts, 'text_56')}
+                    title={filterArrayByKey(texts, 'text_57')}
+                    price={filterArrayByKey(texts, 'text_58')}
+                    accordion={filterArrayByKey(texts, 'text_59')}
                 />
             </div>
-            <p className={'mb-4'}>Ostatní služby:</p>
+            <p className={'mb-4'}>{filterArrayByKey(texts, 'text_60')}</p>
             <div className={'grid md:grid-cols-2 gap-6'}>
                 <PricingBlock
-                    text={
-                        'Individuální trénink nebo konzultace na konkrétní téma s využitím fyzio přístupů.'
-                    }
-                    title={'Jednorázový trénink s konzultací'}
-                    price={'999 Kč'}
-                    accordion={'(30-60 minut)'}
+                    text={filterArrayByKey(texts, 'text_61')}
+                    title={filterArrayByKey(texts, 'text_62')}
+                    price={filterArrayByKey(texts, 'text_63')}
+                    accordion={filterArrayByKey(texts, 'text_64')}
                     bgClass={'bg-grey'}
                 />
                 <PricingBlock
-                    text={'Mobilitu, strečink, kompenzační cvičení'}
-                    title={'Rehabilitační cvičení'}
-                    price={'999 Kč'}
-                    accordion={'(40-60 minut)'}
+                    text={filterArrayByKey(texts, 'text_65')}
+                    title={filterArrayByKey(texts, 'text_66')}
+                    price={filterArrayByKey(texts, 'text_67')}
+                    accordion={filterArrayByKey(texts, 'text_68')}
                     bgClass={'bg-grey'}
                 />
                 <PricingBlock
-                    text={
-                        'Úvodní svalový rozbor, sestavení a průběžné přizpůsobování tréninků (plánu), individuální trénink s využitím fyzio přístupů'
-                    }
-                    title={'Sestavení jídelního plánu na míru'}
-                    price={'999 Kč'}
+                    text={filterArrayByKey(texts, 'text_69')}
+                    title={filterArrayByKey(texts, 'text_70')}
+                    price={filterArrayByKey(texts, 'text_71')}
                     bgClass={'bg-grey'}
                 />
             </div>

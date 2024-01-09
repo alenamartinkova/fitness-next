@@ -1,3 +1,5 @@
+import {createMarkup, filterArrayByKey} from "../lib/helper";
+
 export const Footer = ({ texts }) => {
     return (
         <>
@@ -17,27 +19,20 @@ export const Footer = ({ texts }) => {
                             className={
                                 'font-extrabold text-3xl italic uppercase'
                             }
-                        >
-                            pojď si se mnou zacvičit
-                        </h1>
+                            dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_42'))}
+                        />
 
                         <div className={'flex flex-col'}>
-                            <strong className={'uppercase italic text-lg'}>
-                                respect club
-                            </strong>
-                            <strong className={'uppercase italic text-lg'}>
-                                alžírská 1539/18
-                            </strong>
-                            <strong className={'uppercase italic text-lg'}>
-                                ostrava-poruba, 708 00
-                            </strong>
+                            <strong className={'uppercase italic text-lg'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_43'))} />
+                            <strong className={'uppercase italic text-lg'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_44'))} />
+                            <strong className={'uppercase italic text-lg'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_45'))} />
                         </div>
 
                         <div className={'flex flex-col'}>
-                            <p>Klára Zagorová</p>
-                            <a href={'callto:'}>+123 456 789</a>
-                            <a href={'mailto:'}>email@seznam.cz</a>
-                            <p>IČO: 123456789</p>
+                            <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_46'))} />
+                            <a href={`callto:${filterArrayByKey(texts, 'text_47')}`} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_47'))} />
+                            <a href={`mailto:${filterArrayByKey(texts, 'text_48')}`} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_48'))} />
+                            <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_49'))} />
                         </div>
                     </div>
 

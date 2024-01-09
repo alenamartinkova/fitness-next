@@ -1,4 +1,5 @@
 import { SpecialBlock } from './special/SpecialBlock'
+import {createMarkup, filterArrayByKey} from "../lib/helper";
 
 export const Special = ({ texts }) => {
     return (
@@ -13,12 +14,9 @@ export const Special = ({ texts }) => {
                 className={
                     'uppercase font-extrabold text-4xl text-pink italic max-w-2xl mb-4'
                 }
-            >
-                být fit znamená více než velké svaly a estetiku těla
-            </h2>
-            <p className={'text-black mb-6'}>
-                Specializované přístupy, které využívám:
-            </p>
+                dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_3'))}
+            />
+            <p className={'text-black mb-6'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_4'))} />
 
             <div
                 className={
@@ -27,26 +25,24 @@ export const Special = ({ texts }) => {
             >
                 <SpecialBlock
                     svg={'hand.svg'}
-                    text={
-                        'Posílení hlubokého stabilizačního systému - CORE trénink'
-                    }
+                    text={filterArrayByKey(texts, 'text_5')}
                 />
                 <SpecialBlock
                     svg={'heart.svg'}
-                    text={'Funkční a kompenzační trénink'}
+                    text={filterArrayByKey(texts, 'text_6')}
                 />
                 <SpecialBlock
                     svg={'muscle.svg'}
-                    text={'Trénink s vlastní a volnou vahou'}
+                    text={filterArrayByKey(texts, 'text_7')}
                 />
 
                 <SpecialBlock
                     svg={'yoga.svg'}
-                    text={'Trénink mobility a stability'}
+                    text={filterArrayByKey(texts, 'text_8')}
                 />
                 <SpecialBlock
                     svg={'food.svg'}
-                    text={'Vedení ke správnému stravování'}
+                    text={filterArrayByKey(texts, 'text_9')}
                 />
             </div>
         </div>
