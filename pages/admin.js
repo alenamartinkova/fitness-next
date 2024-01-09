@@ -80,7 +80,7 @@ export default function Admin() {
                             />
                         </div>
                     ))}
-                    <button className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-full px-5 py-2.5 text-center" type="submit">Submit</button>
+                    <button className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-[300px] text-center fixed bottom-2 py-2 right-2" type="submit">Submit</button>
                 </form>
             : 'No texts'}
 
