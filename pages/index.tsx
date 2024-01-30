@@ -20,14 +20,23 @@ const Home: NextPage = () => {
       try {
         const response = await fetch('/api/select');
         const data = await response.json();
+
+        if (data.error) {
+          throw new Error('Error');
+        }
+
         setTexts(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error.message);
       }
     };
 
     fetchData();
   }, []);
+
+  if (texts.length <= 0) {
+    return <>No texts</>
+  }
 
   return (
     <div
