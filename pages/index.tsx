@@ -17,17 +17,21 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch('/api/select');
-        const data = await response.json();
-
-        if (data.error) {
-          throw new Error('Error');
+      const cachedTexts = localStorage.getItem('texts');
+      if (cachedTexts) {
+        setTexts(JSON.parse(cachedTexts));
+      } else {
+        try {
+          const response = await fetch('/api/select');
+          const data = await response.json();
+          if (data.error) {
+            throw new Error('Error');
+          }
+          localStorage.setItem('texts', JSON.stringify(data));
+          setTexts(data);
+        } catch (error) {
+          console.error('Error fetching data:', error.message);
         }
-
-        setTexts(data);
-      } catch (error) {
-        console.error('Error fetching data:', error.message);
       }
     };
 

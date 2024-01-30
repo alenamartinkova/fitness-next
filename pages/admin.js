@@ -79,7 +79,7 @@ export default function Admin() {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-
+            localStorage.removeItem('texts');
             setShowSuccessToast(true);
             setTimeout(() => setShowSuccessToast(false), 3000);
         } catch (error) {
