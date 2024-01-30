@@ -34,10 +34,6 @@ const Home: NextPage = () => {
     fetchData();
   }, []);
 
-  if (texts.length <= 0) {
-    return <>No texts</>
-  }
-
   return (
     <div
       className={

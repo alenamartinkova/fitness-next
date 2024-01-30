@@ -5,29 +5,61 @@ import 'react-quill/dist/quill.snow.css';
 
 const ReactQuill = dynamic(() => import('react-quill'), {
     ssr: false,
-    loading: () => <p>Loading...</p>, // Optional: add a loading placeholder
+    loading: () => <p>Loading...</p>,
 });
 
 export default function Admin() {
     const [texts, setTexts] = useState([]);
     const [showSuccessToast, setShowSuccessToast] = useState(false);
     const [showErrorToast, setShowErrorToast] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+    // Authenticate User
     useEffect(() => {
-        // Fetch data from the database -> call the function from index.js
-        const fetchData = async () => {
+        const authenticate = async () => {
+            const username = prompt('Enter username');
+            const password = prompt('Enter password');
+
             try {
-                const response = await fetch('/api/select');
-                const data = await response.json();
-                setTexts(data);
+                const response = await fetch('/api/auth', {
+                    method: 'POST',
+                    headers: new Headers({
+                        'Authorization': `Basic ${btoa(`${username}:${password}`)}`,
+                        'Content-Type': 'application/json'
+                    }),
+                });
+
+                if (response.ok) {
+                    setIsAuthenticated(true);
+                    fetchData();
+                } else {
+                    alert('Authentication failed!');
+                }
             } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error('Authentication error:', error);
             }
         };
 
-        fetchData();
+        authenticate();
     }, []);
 
+    // Fetch Data from the Database
+    const fetchData = async () => {
+        try {
+            const response = await fetch('/api/select');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setTexts(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            setShowErrorToast(true);
+            setTimeout(() => setShowErrorToast(false), 3000);
+        }
+    };
+
+    // Handle Submit
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -45,30 +77,31 @@ export default function Admin() {
             });
 
             if (!response.ok) {
-                setShowErrorToast(true);
-                setTimeout(() => setShowErrorToast(false), 3000);
                 throw new Error('Network response was not ok');
-            } else {
-                setShowSuccessToast(true);
-                setTimeout(() => setShowSuccessToast(false), 3000);
             }
+
+            setShowSuccessToast(true);
+            setTimeout(() => setShowSuccessToast(false), 3000);
         } catch (error) {
             console.error('Error updating data:', error);
+            setShowErrorToast(true);
+            setTimeout(() => setShowErrorToast(false), 3000);
         }
     };
 
+    // Handle Input Change
     const handleInputChange = useCallback(debounce((key, value) => {
-        setTexts(prevTexts => prevTexts.map(text => {
-            if (text.text_key === key) {
-                return { ...text, value };
-            }
-            return text;
-        }));
+        setTexts(prevTexts => prevTexts.map(text => text.text_key === key ? { ...text, value } : text));
     }, 500), []);
+
+    // Render Admin Page
+    if (!isAuthenticated) {
+        return <div>Authenticating...</div>;
+    }
 
     return (
         <div className={'container mx-auto flex flex-col gap-4 my-4'}>
-            {texts.length > 0 ?
+            {texts.length > 0 ? (
                 <form onSubmit={handleSubmit}>
                     {texts.map(text => (
                         <div key={text.text_key} className={'mb-4'}>
@@ -80,9 +113,11 @@ export default function Admin() {
                             />
                         </div>
                     ))}
-                    <button className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-[300px] text-center fixed bottom-2 py-2 right-2" type="submit">Submit</button>
+                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-[300px] text-center fixed bottom-2 py-2 right-2">
+                        Submit
+                    </button>
                 </form>
-            : 'No texts'}
+            ) : 'No texts'}
 
             {showSuccessToast && (
                 <div className="bg-green-500 text-white p-4 rounded-md mb-4">
