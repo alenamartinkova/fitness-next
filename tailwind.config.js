@@ -11,10 +11,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'footer-klarka': "url('../public/footer-klarka.jpeg')",
-        'about-me-klarka': "url('../public/about-me.jpeg')",
-        'education-klarka': "url('../public/education-1.jpeg')",
-        'education-2-klarka': "url('../public/education-2.jpeg')",
+        'footer-klarka': "url('../src/footer-klarka.jpeg')",
+        'about-me-klarka': "url('../src/about-me.jpeg')",
+        'education-klarka': "url('../src/education-1.jpeg')",
+        'education-2-klarka': "url('../src/education-2.jpeg')",
       },
       width: {
         unset: 'unset',
