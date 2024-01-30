@@ -13,13 +13,19 @@ export const Education = ({ texts }) => {
                 <div className={'flex md:order-1 order-2 justify-center'}>
                     <div
                         className={
-                            'bg-education-klarka max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-center bg-no-repeat rounded-[33px]'
+                            'max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-center bg-no-repeat rounded-[33px]'
                         }
+                        style={{
+                            backgroundImage: "url('../education-1.jpeg')"
+                        }}
                     />
                     <div
                         className={
-                            'bg-education-2-klarka max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-left bg-no-repeat rounded-[33px] mt-[145px] ml-[-50px]'
+                            'max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-left bg-no-repeat rounded-[33px] mt-[145px] ml-[-50px]'
                         }
+                        style={{
+                            backgroundImage: "url('../education-2.jpeg')"
+                        }}
                     />
                 </div>
                 <div className={'flex flex-col gap-6 md:order-2 order-1'}>

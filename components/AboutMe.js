@@ -25,8 +25,11 @@ export const AboutMe = ({ texts }) => {
 
                 <div
                     className={
-                        'rounded-[33px] sm:h-[659px] h-[420px] bg-about-me-klarka bg-cover bg-center bg-no-repeat'
+                        'rounded-[33px] sm:h-[659px] h-[420px] bg-cover bg-center bg-no-repeat'
                     }
+                    style={{
+                        backgroundImage: "url('../about-me.jpeg')"
+                    }}
                 ></div>
             </div>
         </div>

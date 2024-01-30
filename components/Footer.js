@@ -39,8 +39,11 @@ export const Footer = ({ texts }) => {
                     <div className={'flex flex-col gap-6'}>
                         <div
                             className={
-                                'rounded-[144px] w-[242px] h-[243px] bg-footer-klarka bg-cover'
+                                'rounded-[144px] w-[242px] h-[243px] bg-cover'
                             }
+                            style={{
+                                backgroundImage: "url('../footer-klarka.jpeg')"
+                            }}
                         />
                         <div className={'flex gap-6 justify-center'}>
                             <a href="/public">
