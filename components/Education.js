@@ -13,7 +13,7 @@ export const Education = ({ texts }) => {
                 <div className={'flex md:order-1 order-2 justify-center'}>
                     <div
                         className={
-                            'max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-center bg-no-repeat rounded-[33px]'
+                            'max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-center bg-no-repeat rounded-[33px] z-10'
                         }
                         style={{
                             backgroundImage: "url('../333.jpg')"
