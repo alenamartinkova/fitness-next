@@ -16,7 +16,6 @@ export const Pricing = ({ texts }) => {
                 }
                 dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_50'))}
             />
-            <p className={'text-center mb-4'} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_51'))} />
             <div className={'grid md:grid-cols-2 gap-6 mb-6'}>
                 <PricingBlock
                     text={filterArrayByKey(texts, 'text_52')}
@@ -31,7 +30,6 @@ export const Pricing = ({ texts }) => {
                     accordion={filterArrayByKey(texts, 'text_59')}
                 />
             </div>
-            <p className={'mb-4'}>{filterArrayByKey(texts, 'text_60')}</p>
             <div className={'grid md:grid-cols-2 gap-6'}>
                 <PricingBlock
                     text={filterArrayByKey(texts, 'text_61')}

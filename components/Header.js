@@ -22,10 +22,10 @@ export const Header = ({ texts }) => {
                 </div>
                 <div
                     className={
-                        'rounded-[33px] bg-grey md:max-w-[400px] lg:max-w-none'
+                        'rounded-[33px] bg-grey md:max-w-[500px]'
                     }
                 >
-                    <img src={'header-klarka.png'} alt={'klarka'} />
+                    <img src={'111.jpg'} alt={'klarka'} />
                 </div>
             </div>
         </div>

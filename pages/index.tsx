@@ -53,8 +53,10 @@ const Home: NextPage = () => {
         <Divider texts={texts} />
         <AboutMe texts={texts} />
         <Education texts={texts} />
-        <Pricing texts={texts} />
-        <Footer texts={texts} />
+        <div className={'flex flex-col md:gap-[60px] gap-4'}>
+          <Pricing texts={texts} />
+          <Footer texts={texts} />
+        </div>
       </div>
     </div>
   )

@@ -30,8 +30,8 @@ export const Footer = ({ texts }) => {
 
                         <div className={'flex flex-col'}>
                             <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_46'))} />
-                            <a href={`callto:${filterArrayByKey(texts, 'text_47')}`} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_47'))} />
-                            <a href={`mailto:${filterArrayByKey(texts, 'text_48')}`} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_48'))} />
+                            <a href={`callto:${createMarkup(filterArrayByKey(texts, 'text_47'))}`} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_47'))} />
+                            <a href={`mailto:${createMarkup(filterArrayByKey(texts, 'text_48'))}`} dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_48'))} />
                             <p dangerouslySetInnerHTML={createMarkup(filterArrayByKey(texts, 'text_49'))} />
                         </div>
                     </div>
@@ -42,17 +42,14 @@ export const Footer = ({ texts }) => {
                                 'rounded-[144px] w-[242px] h-[243px] bg-cover'
                             }
                             style={{
-                                backgroundImage: "url('../footer-klarka.jpeg')"
+                                backgroundImage: "url('../111.jpg')"
                             }}
                         />
                         <div className={'flex gap-6 justify-center'}>
-                            <a href="/public">
+                            <a href="#">
                                 <img src={'fb.svg'} alt="facebook" />
                             </a>
-                            <a href="/public">
-                                <img src={'linkedin.svg'} alt="linkedin" />
-                            </a>
-                            <a href="/public">
+                            <a href="#">
                                 <img src={'insta.svg'} alt="instagram" />
                             </a>
                         </div>
@@ -61,7 +58,7 @@ export const Footer = ({ texts }) => {
             </div>
             <div className={'flex justify-center mb-[60px]'}>
                 <a href="#top" className={'cursor-pointer'}>
-                    <img src={'logo.svg'} alt="logo" />
+                    <img src={'logo.svg'} alt="logo" className={'w-[120px]'}/>
                 </a>
             </div>
         </>

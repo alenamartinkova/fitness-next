@@ -16,7 +16,7 @@ export const Education = ({ texts }) => {
                             'max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-center bg-no-repeat rounded-[33px]'
                         }
                         style={{
-                            backgroundImage: "url('../education-1.jpeg')"
+                            backgroundImage: "url('../222.jpg')"
                         }}
                     />
                     <div
@@ -24,7 +24,7 @@ export const Education = ({ texts }) => {
                             'max-w-[210px] sm:max-w-none w-full h-[235px] sm:w-[250px] sm:h-[275px] md:w-[329px] md:h-[368px] bg-cover bg-left bg-no-repeat rounded-[33px] mt-[145px] ml-[-50px]'
                         }
                         style={{
-                            backgroundImage: "url('../education-2.jpeg')"
+                            backgroundImage: "url('../333.jpg')"
                         }}
                     />
                 </div>
