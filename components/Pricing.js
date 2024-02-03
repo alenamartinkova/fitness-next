@@ -51,6 +51,12 @@ export const Pricing = ({ texts }) => {
                     price={filterArrayByKey(texts, 'text_71')}
                     bgClass={'bg-grey'}
                 />
+                <PricingBlock
+                    text={filterArrayByKey(texts, 'text_73')}
+                    title={filterArrayByKey(texts, 'text_72')}
+                    price={filterArrayByKey(texts, 'text_74')}
+                    bgClass={'bg-grey'}
+                />
             </div>
         </div>
     )
