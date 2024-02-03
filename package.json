@@ -17,6 +17,7 @@
     "react-quill": "^2.0.0"
   },
   "devDependencies": {
+    "@types/node": "20.11.16",
     "@types/react": "18.2.47",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
