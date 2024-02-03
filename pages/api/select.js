@@ -9,7 +9,7 @@ export default async (req, res) => {
         }
 
         const result = await executeQuery({
-            query: 'SELECT * FROM texts', // Assuming you want to filter by 'content'
+            query: 'SELECT * FROM texts',
         });
 
         // You should send back the result as a JSON response
