@@ -120,13 +120,13 @@ export default function Admin() {
             ) : 'No texts'}
 
             {showSuccessToast && (
-                <div className="bg-green-500 text-white p-4 rounded-md mb-4">
+                <div className="bg-green-500 text-white p-4 rounded-md w-[300px] text-center fixed bottom-2 py-2 left-2">
                     Update successful!
                 </div>
             )}
 
             {showErrorToast && (
-                <div className="bg-red-500 text-white p-4 rounded-md mb-4">
+                <div className="bg-red-500 text-white p-4 rounded-md w-[300px] text-center fixed bottom-2 py-2 left-2">
                     Error updating texts!
                 </div>
             )}
