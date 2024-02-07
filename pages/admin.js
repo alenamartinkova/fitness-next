@@ -10,6 +10,7 @@ const ReactQuill = dynamic(() => import('react-quill'), {
 
 export default function Admin() {
     const [texts, setTexts] = useState([]);
+    const [originalTexts, setOriginalTexts] = useState([]);
     const [showSuccessToast, setShowSuccessToast] = useState(false);
     const [showErrorToast, setShowErrorToast] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -52,6 +53,7 @@ export default function Admin() {
             }
             const data = await response.json();
             setTexts(data);
+            setOriginalTexts(JSON.parse(JSON.stringify(data)));
         } catch (error) {
             console.error('Error fetching data:', error);
             setShowErrorToast(true);
@@ -63,10 +65,18 @@ export default function Admin() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const updatedTexts = texts.map(text => ({
+            const updatedTexts = texts.filter((text, index) => text.value !== originalTexts[index].value).map(text => ({
                 text_key: text.text_key,
                 value: text.value
             }));
+
+            if (updatedTexts.length === 0) {
+                console.error('No changes to update');
+                setShowErrorToast(true);
+                setTimeout(() => setShowErrorToast(false), 3000);
+                return; // Exit if no changes
+            }
+
 
             const response = await fetch('/api/update', {
                 method: 'POST',

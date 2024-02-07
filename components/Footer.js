@@ -46,10 +46,10 @@ export const Footer = ({ texts }) => {
                             }}
                         />
                         <div className={'flex gap-6 justify-center'}>
-                            <a href="#">
+                            <a href="https://www.facebook.com/klarka.zagorova">
                                 <img src={'fb.svg'} alt="facebook" />
                             </a>
-                            <a href="#">
+                            <a href="https://www.instagram.com/klarisa._/">
                                 <img src={'insta.svg'} alt="instagram" />
                             </a>
                         </div>
